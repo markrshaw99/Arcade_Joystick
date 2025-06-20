@@ -37,7 +37,7 @@ function updateJoystickImage() {
     filename = 'Central';
   }
 
-  joystick.src = `assets/joystick/PNG/${filename}.png`;
+  joystick.src = `assets/joystick/${filename}.png`;
 }
 
 // Handle key press
