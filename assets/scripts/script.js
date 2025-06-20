@@ -55,3 +55,28 @@ window.addEventListener('keyup', (e) => {
     updateJoystickImage();
   }
 });
+
+document.querySelectorAll('.mobile-arrows .arrow').forEach(btn => {
+  const key = btn.dataset.dir;
+
+  btn.addEventListener('touchstart', e => {
+    e.preventDefault();
+    activeKeys.add(key);
+    updateJoystickImage();
+    btn.classList.add('active');
+  });
+
+  btn.addEventListener('touchend', e => {
+    e.preventDefault();
+    activeKeys.delete(key);
+    updateJoystickImage();
+    btn.classList.remove('active');
+  });
+
+  // Optional: Remove active state if touch leaves the button
+  btn.addEventListener('touchcancel', e => {
+    activeKeys.delete(key);
+    updateJoystickImage();
+    btn.classList.remove('active');
+  });
+});
