@@ -3,8 +3,8 @@ const activeKeys = new Set();
 
 // Maps arrow keys to joystick direction parts
 const keyToPart = {
-  'ArrowUp': 'Forwards',
-  'ArrowDown': 'Back',
+  'ArrowUp': 'Forward',
+  'ArrowDown': 'Backward',
   'ArrowLeft': 'Left',
   'ArrowRight': 'Right',
 };
@@ -24,10 +24,10 @@ function updateJoystickImage() {
   } else if (directions.length === 2) {
     // Combine into one of the 4 diagonals
     const dirSet = new Set(directions);
-    if (dirSet.has('Forwards') && dirSet.has('Left')) filename = 'Forwards Left';
-    else if (dirSet.has('Forwards') && dirSet.has('Right')) filename = 'Forwards Right';
-    else if (dirSet.has('Back') && dirSet.has('Left')) filename = 'Back Left';
-    else if (dirSet.has('Back') && dirSet.has('Right')) filename = 'Back Right';
+    if (dirSet.has('Forward') && dirSet.has('Left')) filename = 'Forward Left';
+    else if (dirSet.has('Forward') && dirSet.has('Right')) filename = 'Forward Right';
+    else if (dirSet.has('Backward') && dirSet.has('Left')) filename = 'Backward Left';
+    else if (dirSet.has('Backward') && dirSet.has('Right')) filename = 'Backward Right';
     else {
       // Invalid diagonal (e.g. Left + Right or Forward + Back) — treat as Central
       filename = 'Central';
@@ -37,7 +37,7 @@ function updateJoystickImage() {
     filename = 'Central';
   }
 
-  joystick.src = `assets/joystick/${filename}.png`;
+  joystick.src = `assets/joystick/PNG/${filename}.png`;
 }
 
 // Handle key press
