@@ -17,29 +17,30 @@ body {
   width: fit-content;
   height: 750px;
   border-radius: 100px;
-  padding: 5%;
+  padding: 2%;
 }
 
 .joystick-container {
   position: relative;  
   width: 500px;  
   height:500px;
+  display: flex; 
 }
 
 .joystick-container img {
   position: absolute;
-  bottom: 100px;
+  bottom: 120px;
   left: 50%;
   transform: translateX(-50%);
-  width: 500px;
+  width: 85%;
   height: auto;
 }
 
-  .mobile-arrows {
-    visibility: hidden;
-    height: 0;
-    width: 0;
-  }
+.mobile-arrows {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
 
 @media screen and (max-width: 600px) {  
 /* Triangle layout for mobile arrows */
